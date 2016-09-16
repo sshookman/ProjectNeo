@@ -17,7 +17,7 @@ void loop() {
 	colorWheel(250);
 }
 
-void setStripColor(uint32_t c, uint8_t wait) {
+void setStripColor(uint32_t c) {
 	for(uint16_t i=0; i<strip.numPixels(); i++) {
 		strip.setPixelColor(i, c);
 	}
@@ -25,7 +25,7 @@ void setStripColor(uint32_t c, uint8_t wait) {
 
 void colorWheel(uint8_t wait) {
 	for (int j=0; j < 256; j++) {
-		setStripColor(wheel(j), wait);
+		setStripColor(wheel(j));
 		strip.show();
 		delay(wait);
 	}
